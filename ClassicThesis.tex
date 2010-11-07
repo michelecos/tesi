@@ -54,23 +54,23 @@
 % ********************************************************************
 % Re-usable information
 % ********************************************************************
-\newcommand{\myTitle}{A Classic Thesis Style\xspace}
+\newcommand{\myTitle}{Combustibili nucleari per reattori di terza e quarta generazione\xspace}
 \newcommand{\myDegree}{An Homage to The Elements of Typographic Style\xspace}
-\newcommand{\myName}{Andr\'e Miede\xspace}
-\newcommand{\myProf}{Put name here\xspace}
+\newcommand{\myName}{Michele Costabile\xspace}
+\newcommand{\myProf}{Andrea Borio Di Tigliole\xspace}
 \newcommand{\myOtherProf}{Put name here\xspace}
 \newcommand{\mySupervisor}{Put name here\xspace}
-\newcommand{\myFaculty}{Put data here\xspace}
-\newcommand{\myDepartment}{Put data here\xspace}
+\newcommand{\myFaculty}{Fisica\xspace}
+\newcommand{\myDepartment}{Dipartimento di ..\xspace}
 \newcommand{\myUni}{\protect{Put data here}\xspace}
-\newcommand{\myLocation}{Darmstadt\xspace}
-\newcommand{\myTime}{May 2010\xspace}
+\newcommand{\myLocation}{Pavia\xspace}
+\newcommand{\myTime}{Novembre 2010\xspace}
 \newcommand{\myVersion}{Version 2.8\xspace}
 %*******************************************************
 % Packages with options that might require adjustments
 %*******************************************************
 \usepackage[latin1]{inputenc} 
-\usepackage[ngerman,american]{babel}           
+\usepackage[ngerman,american, italian]{babel}           
 \usepackage[square,numbers]{natbib} 
 \usepackage[fleqn]{amsmath} % math environments and more by the AMS 
 
@@ -82,7 +82,7 @@
 % subfig nochapters beramono eulermath parts minionpro pdfspacing 
 % listings dottedtoc minionprospacing manychapters
 \usepackage[eulerchapternumbers,drafting,listings,listsseparated,%pdfspacing,%listings,
-						subfig,beramono,eulermath,parts]{classicthesis}
+						subfig,beramono,eulermath,parts,tocaligned]{classicthesis}
 
 %*******************************************************
 % Some font experiments
@@ -190,7 +190,7 @@
 \begin{document}
 \frenchspacing
 \raggedbottom
-\selectlanguage{american} % american ngerman
+\selectlanguage{italian} % american ngerman
 %\renewcommand*{\bibname}{new name}
 %\setbibpreamble{}
 \pagenumbering{roman}
@@ -199,12 +199,12 @@
 % Frontmatter
 %*******************************************************
 \include{FrontBackmatter/DirtyTitlepage}
-\include{FrontBackmatter/Titlepage}
-\include{FrontBackmatter/Titleback}
-\cleardoublepage\include{FrontBackmatter/Dedication}
+%\include{FrontBackmatter/Titlepage}
+%\include{FrontBackmatter/Titleback}
+%\cleardoublepage\include{FrontBackmatter/Dedication}
 \cleardoublepage\include{FrontBackmatter/Abstract}
-\cleardoublepage\include{FrontBackmatter/Publication}
-\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+%\cleardoublepage\include{FrontBackmatter/Publication}
+%\cleardoublepage\include{FrontBackmatter/Acknowledgments}
 \pagestyle{scrheadings}
 \cleardoublepage\include{FrontBackmatter/Contents}
 %********************************************************************
@@ -212,25 +212,26 @@
 %*******************************************************
 \pagenumbering{arabic}
 % use \cleardoublepage here to avoid problems with pdfbookmark
-\cleardoublepage\part{Some Kind of Manual}
+\cleardoublepage\part{Reattori nucleari di terza e quarta generazione}
 \include{Chapters/Chapter01}
-\cleardoublepage\part{The Showcase}
+\cleardoublepage\part{Combustibili per i reattori di terza generazione}
 \include{Chapters/Chapter02}
+\cleardoublepage\part{Combustibili per i reattori di quarta generazione}
 %\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
 \include{Chapters/Chapter03}
 %\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
 % Backmatter
 %*******************************************************
-\appendix
-\cleardoublepage\part{Appendix}
-\include{Chapters/Chapter0A}
+%\appendix
+%\cleardoublepage\part{Appendice}
+%\include{Chapters/Chapter0A}
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
 \cleardoublepage\include{FrontBackmatter/Bibliography}
 \cleardoublepage\include{FrontBackmatter/Colophon}
-\cleardoublepage\include{FrontBackmatter/Declaration}
+%\cleardoublepage\include{FrontBackmatter/Declaration}
 % ********************************************************************
 % Game Over: Restart, Restore or Quit?
 %*******************************************************
