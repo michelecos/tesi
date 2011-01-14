@@ -1,31 +1,4 @@
-% **************************************************************************************************************
-% A Classic Thesis Style
-% An Homage to The Elements of Typographic Style
-%
 % Copyright (C) 2010 André Miede http://www.miede.de
-%
-% If you like the style then I would appreciate a postcard. My address 
-% can be found in the file ClassicThesis.pdf. A collection of the 
-% postcards I received so far is available online at 
-% http://postcards.miede.de
-%
-% License:
-% This program is free software; you can redistribute it and/or modify
-% it under the terms of the GNU General Public License as published by
-% the Free Software Foundation; either version 2 of the License, or
-% (at your option) any later version.
-%
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU General Public License for more details.
-%
-% You should have received a copy of the GNU General Public License
-% along with this program; see the file COPYING.  If not, write to
-% the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-% Boston, MA 02111-1307, USA.
-%
-% **************************************************************************************************************
 % Note:
 %    * You must not use "u etc. in strings/commands that will be spaced out (use \"u or real umlauts instead)
 %    * New enumeration (small caps): \begin{aenumerate} \end{aenumerate}
@@ -33,13 +6,6 @@
 %    * Do not use bold fonts in this style, it is designed around them
 %    * Use tables as in the examples
 %    * See classicthesis-ldpkg.sty for useful commands
-% **************************************************************************************************************
-% To Do:
-%		 * [high] Check this out: http://www.golatex.de/koma-script-warnung-in-verbindung-mit-listings-package-t2058.html
-%    * [medium] mathbb in section-titles/chapter-titles => disappears somehow in headlines!!!
-%    * [low] Calculate text block size for Libertine font
-%    * [low] Think about processing a4paper, a5paper, 10pt, 11pt, 12pt etc. options for typearea layout
-%            (store values in internal variables and handle by \AtEndOfPackage{\areaset...})
 % **************************************************************************************************************
 \documentclass[ twoside,openright,titlepage,fleqn,numbers=noenddot,headinclude,%1headlines,% 
                 11pt,a4paper,BCOR5mm,footinclude,cleardoublepage=empty,abstractoff % <--- obsolete, remove (todo)
@@ -184,13 +150,11 @@
 % Hyphenation
 %*******************************************************
 %\hyphenation{put special hyphenation here}
-% ********************************************************************
-% GO!GO!GO! MOVE IT!
 %*******************************************************
 \begin{document}
 \frenchspacing
 \raggedbottom
-\selectlanguage{italian} % american ngerman
+\selectlanguage{italian}
 %\renewcommand*{\bibname}{new name}
 %\setbibpreamble{}
 \pagenumbering{roman}
@@ -212,14 +176,9 @@
 %*******************************************************
 \pagenumbering{arabic}
 % use \cleardoublepage here to avoid problems with pdfbookmark
-\cleardoublepage\part{Reattori nucleari di terza e quarta generazione}
 \include{Chapters/Chapter01}
-\cleardoublepage\part{Combustibili per i reattori di terza generazione}
 \include{Chapters/Chapter02}
-\cleardoublepage\part{Combustibili per i reattori di quarta generazione}
-%\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
 \include{Chapters/Chapter03}
-%\include{multiToC} % <--- just debug stuff, ignore for your documents
 % ********************************************************************
 % Backmatter
 %*******************************************************
@@ -233,7 +192,6 @@
 \cleardoublepage\include{FrontBackmatter/Colophon}
 %\cleardoublepage\include{FrontBackmatter/Declaration}
 % ********************************************************************
-% Game Over: Restart, Restore or Quit?
 %*******************************************************
 \end{document}
 % ********************************************************************

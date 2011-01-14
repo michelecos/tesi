@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99c (TeX Live 2009)
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: FrontBackmatter/DirtyTitlepage.aux
+A level-1 auxiliary file: FrontBackmatter/Abstract.aux
+A level-1 auxiliary file: FrontBackmatter/Contents.aux
+A level-1 auxiliary file: Chapters/Chapter01.aux
+A level-1 auxiliary file: Chapters/Chapter02.aux
+A level-1 auxiliary file: Chapters/Chapter03.aux
+A level-1 auxiliary file: FrontBackmatter/Bibliography.aux
+The style file: plainnat.bst
+A level-1 auxiliary file: FrontBackmatter/Colophon.aux
+Database file #1: Bibliography.bib
+Warning--entry type for ":hc" isn't style-file defined
+--line 12 of file Bibliography.bib
+Warning--entry type for ":kl" isn't style-file defined
+--line 26 of file Bibliography.bib
+Warning--entry type for ":cr" isn't style-file defined
+--line 47 of file Bibliography.bib
+Warning--entry type for ":dq" isn't style-file defined
+--line 54 of file Bibliography.bib
+Warning--entry type for ":bh" isn't style-file defined
+--line 61 of file Bibliography.bib
+Warning--entry type for ":qf" isn't style-file defined
+--line 68 of file Bibliography.bib
+Warning--to sort, need author or key in :hc
+Warning--to sort, need author or key in :qf
+Warning--to sort, need author or key in :kl
+Warning--to sort, need author or key in :bh
+Warning--to sort, need author or key in :dq
+Warning--to sort, need author or key in :cr
+Warning--empty year in :bh
+Warning--empty year in :cr
+Warning--empty year in :dq
+Warning--empty year in :hc
+Warning--empty year in :kl
+Warning--empty year in :qf
+You've used 7 entries,
+            2773 wiz_defined-function locations,
+            619 strings with 5401 characters,
+and the built_in function-call counts, 1697 in all, are:
+= -- 147
+> -- 10
+< -- 1
++ -- 10
+- -- 3
+* -- 103
+:= -- 158
+add.period$ -- 10
+call.type$ -- 7
+change.case$ -- 21
+chr.to.int$ -- 7
+cite$ -- 32
+duplicate$ -- 110
+empty$ -- 243
+format.name$ -- 4
+if$ -- 403
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 31
+num.names$ -- 4
+pop$ -- 99
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 97
+stack$ -- 0
+substring$ -- 20
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 12
+while$ -- 3
+width$ -- 0
+write$ -- 63
+(There were 18 warnings)
