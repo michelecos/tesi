@@ -1,40 +1,365 @@
 %************************************************
-\chapter{Introduzione}
+\chapter{Fisica dei reattori}
 %************************************************
-\section{Reattori nucleari}
+\section{Interazione dei neutroni con la materia}
 
-I reattori nucleari sono nati negli anni '50. Il primo reattore nucleare sperimentale a essere collegato a una rete elettrica fu l'impianto da 5 MW di Obninsk, acceso il 27 giugno 1954. Seguirono gli impianti commerciali di Calder Hall \cite{:hc} presso Sellafield in Inghilterra, nel 1956, con una capacità di 50 MW, seguito un anno dopo dal primo reattore statunitense, l'impianto di Shippingport in Pennsylvania \cite{:qf}.
+L'energia di un reattore nucleare è prodotta dall'interazione di neutroni termici con la materia che compone il combustibile. Esaminiamo, di conseguenza, il modo in cui i neutroni interagiscono con la materia, in particolare le interazioni fra neutroni e nuclei atomici. Le interazioni fra neutroni e elettroni, sulle quali esiste una letteratura a partire dal lavoro di Foldy \cite{PhysRev.87.693}, sono generalmente ignorate. La mancanza di carica del neutrone e la differenza di massa fra neutroni e elettroni collaborano a rendere trascurabile questa interazione per i nostri fini.
 
-Il Dipartimento Dell'Energia degli Stati Uniti (DOE) classifica i reattori nucleari in quattro generazioni principali e una intermedia, quindi parliamo di reattori di generazione I, II, III, III+ e IV \cite{:kl}.
+L'interazione fra neutroni e nuclei ricade in sei principali categorie:
 
-La prima generazione di reattori comprende modelli sperimentali, come l'impianto di Shippingport, Ohio \cite{:qf}, il progetto inglese Magnox \cite{:bh}, l'impianto Fermi 1 sul lago Erie nel Michigan \cite{:dq}, e la centrale di Dresden, Illinois \cite{:cr}.
+\begin{itemize}
+\item Scattering elastico $(n, n)$: In questa reazione il neutrone colpisce un nucleo, che è quasi sempre nello stato fondamentale. Il neutrone riappare dopo l'urto e il nucleo è lasciato nello stato fondamentale. Questo tipo di reazione può essere trattata con la cinematica classica in quanto energia e quantità di moto sono conservate.
 
-% vedi http://en.wikipedia.org/wiki/Generation_II_reactor
-I progetti di seconda generazione sono PWR, CANDU, BWR, AGR, and VVER.[1]
+\item Scattering anelastico $(n, n')$: Questo processo è praticamente identico allo scattering elestico con l'unica differenza che il nucleo dopo l'urto rimane in uno stato eccitato. Siccome parte dell'energia (che nello scattering anelastico non è conservata) è trattenuta dal nucleo colpito la reazione è chiaramente endotermica. Il nucleo eccitato può successivamente decadere con emissione di un raggio $\gamma$.
 
-% vedi http://en.wikipedia.org/wiki/Generation_III_reactor
-La terza generazione di reattori porta miglioramenti significativi all'efficienza ABWR APWR CANDU (EC6) VVER
+\item Cattura radiativa $(n, \gamma)$: Un neutrone viene catturato da un nucleo e uno o più raggi $\gamma$ sono emessi. La reazione è esotermica. Siccome il neutrone incidente viene assorbito, questa reazione fa parte delle classe delle reazioni di assorbimento. La cattura radiativa gioca un ruolo fondamenta nella fisica dei reattori nucleari perché è la principale causa di perdita di neutroni nell'economia neutronica di un reattore.
+
+\item Reazioni con emissione di particelle cariche $(n, \alpha)(n, p)$: Il neutrone viene assorbito e possono essere emesse particelle cariche come particelle $\alpha$ o protoni. Entrambe le reazioni possono essere sia endotermiche che esotermiche.
+
+\item Reazioni nutrone-neutrone $(n, 2n)(n, 3n)$: Queste reazioni avvengono con neutroni proiettile molto energetici e sono chiaramente endotermiche.
+
+\item Fissione: La fissione nucleare consiste nella rottura del nucleo di un elemento in due nuclei di elementi più leggeri con conseguente rilascio di energia. Questa è la reazione utilizzata per lo sfruttamento dell'energia nucleare come fonte energetica.
+
+\end{itemize}
+
+\section{Energia di legame dei nuclei}
+
+La fissione nucleare è il processo attraverso il quale un nucleo pesante si separa in due frammenti più leggeri con conseguente rilascio di una grande quantità di energia(? 200 MeV).
+Per comprendere questo fenomeno fisico è utile far riferimento alla figura seguente che mostra l'energia di legame per nucleone in funzione del numero di massa.
+
+\figura{energia_di_legame}{Energia di legame per nucleone}
+
+L'energia di legame inizialmente cresce rapidamente con il numero atomico, fino ad arrivare a un massimo di circa 8.5 MeV con l'atomo del ferro. Dopo il Fe${}^{58}$ l'energia di legame per nucleone scende lentamente fino ad arrivare intorno a 8 MeV.
+
+Una curva che segue fedelmente l'andamento delle energie di legame osservate era stata proposta da Weizs\"acher nel 1935. La sua interpretazione teorica dà credito delle forze nucleari rappresentando il nucleo come una goccia.
+
+Sia $A=Z+N$ il numero di massa di un nuclide, l'energia di legame del nucleo secondo il modello collettivo o a goccia è data da:
+
+\[
+\frac{E_{\rm bind}}{c^2}=a_1A-a_2A^{2/3}-a_3\frac{Z(Z-1)}{A^{1/3}}-a_4\frac{(N-Z)^2}{A}+\epsilon a_5A^{-3/4}
+\]
+
+Questi termini nascono da:
+
+\begin{enumerate}
+\item $a_1$: Energia di legame della forza forte nucleare, approssimativamente $\sim A$.
+\item $a_2$: Correzione superficiale: i nucleoni vicini alla superficie sono meno legati.
+\item $a_3$: Repulsione di Coulomb fra i protoni.
+\item $a_4$: Termine di asimmetria: un sovrappiù di protoni o neutroni ha un'energia di legame inferiore.
+\item $a_5$: Termine di accoppiamento: nuclei con un numero pari di protoni o neutroni 
+	sono più stabili perché le coppie di protoni o neutroni hanno un'energia inferiore.
+	Il valore di $\epsilon$ è come segue:	
+\[
+  \begin{cases}
+      \text{$Z$ pari, $N$ pari} & \quad \epsilon=+1\\      
+      \text{$Z$ dispari, $N$ dispari} & \quad \epsilon=-1\\      
+      \text{$Z$ pari, $N$ dispari} & \quad \epsilon=0\\      
+      \text{$Z$ dispari, $N$ pari} & \quad \epsilon=0\\
+  \end{cases}
+\]
+\end{enumerate}
+
+\section{La fissione nucleare}
+
+La fissione consiste nella divisione di un nucleo in nuclei più piccoli. Durante il processo di fissione possono essere emessi dei nucleoni, per esempio neutroni. I nucleoni che non sfuggono vanno a costituire i nuclei prodotti dalla fissione. L'energia di legame dei nuclei risultanti è maggiore, quindi si ha una liberazione di energia nell'ambiente.
+Nel caso dell'uranio 235, l'energia liberata in una reazione di fissione è dell'ordine di 200 MeV.
+
+\figura{fission_products}{Distribuzione per numero atomico dei prodotti di fissione di diversi materiali}
+
+piccola, ma importante quando si considera che il fattore di conversione fra massa e energia è molto elevato, secondo la nota equazione di Einstein:
+
+$$
+E = mc^{2}
+$$
+
+\subsection{La reazione a catena}
 
 
+Una delle possibili reazioni di fissione per l'uranio 235 è la seguente.
+
+$$
+\nucl{235}{92}{U} + \nucl{1}{0}{n} \to \nucl{141}{56}{Ba} + \nucl{92}{36}{Kr} + 3 \nucl{1}{0}{n} 
+$$
+
+Non si tratta dell'unica reazione possibile, come si vede analizzando la figura \ref{fig:fission_products}, che evidenzia la distribuzione dei prodotti di fissione intorno a dei massimi, ma con ampie variazioni.
+Il risultato della reazione sono due nuclei con numeri atomici che sommati insieme danno 233, quindi tre neutroni sono liberati nella reazione. Se questi neutroni dessero luogo ad altrettante fissioni, si potrebbero avere nove neutroni liberi nella seconda generazione e così via in progressione geometrica. Dato che il processo di fissione avviene in un tempo dell'ordine di $10^{-16}$ secondi, l'energia liberata in una reazione, si moltiplica rapidamente.
+
+La figura \ref{fig:reazione_a_catena} a pagina \pageref{fig:reazione_a_catena} illustra una reazione a catena
 
 
-\section{La terza generazione, (gen3)}
+\figura{reazione_a_catena}{Reazione a catena}
 
-i reattori di terza generazione
+\subsection{sezione d'urto}
 
-\subsection{}
+Si supponga che un fascio monoenergetico di neutroni di intensità $I = nv$ (dove $n$ è il numero di neutroni per $cm^3$ del fascio e $v$ è la velocità dei neutroni) incida su un bersaglio di spessore $X$ e area $A$. Il numero di reazioni per unità di tempo fra i neutroni incidenti e i nuclei del bersaglio è proporzionale all'intensità $I$ del fascio, alla densità nucleare $N$ del bersaglio, e al volume del bersaglio stesso. Cioè
+
+\[
+R = \sigma INAX
+\]
+
+La costante di proporzionalità $\sigma$ è detta sezione d'urto del processo di reazione.
+
+La sezione d'urto, che può essere interpretata come la probabilità che un neutrone del fascio ha di collidere con uno dei nuclei del bersaglio, ha le dimensioni di un'area e solitamente viene espressa in barn ($1$ \text{barn} = $10^{-24}\text{cm}^{2}$).
+
+La sezione d'urto appena definita è detta microscopica per distinguerla dalla sezione d'urto macroscopica definita come
+
+\[
+\Sigma = N \sigma
+\]
 
 
-\section{La generazione intermedia (gen3+)}
+$\Sigma$ ha le dimensioni dell'inverso di una lunghezza e rappresenta la probabilità per unità di lunghezza che un neutrone subisca un'interazione attaversando un certo materiale.
 
-i reattori di terza generazione evoluta
+\subsection{Il rallentamento dei neutroni}
 
-\section{La quarta generazione}
+Osserviamo nella figura \ref{fig:neutron_cross_section} come varia la sezione d'urto al variare dell'energia.
 
-i reattori di quarta generazione
+\figura{neutron_cross_section}{Sezione d'urto fra neutroni e nuclei}
+
+Possiamo identificare due fenomeni notevoli.
+
+In primo luogo la sezione d'urto dei nuclei esaminati varia con l'inverso dell'energia, quindi della velocità, dei neutroni incidenti e raggiunge il massimo per le velocità più basse.
+
+Questo si spiega col fatto che un neutrone, che non ha carica, non ha bisogno di avere energia sufficiente a vincere la repulsione elettrostatica del nucleo per arrivare a collidere col nucleo; di conseguenza, anche i neutroni a bassissima energia riescono a collidere.
+
+In secondo luogo, la fissione del nucleo impattato non dipende dall'energia dell'urto fra il proiettile e il bersaglio, ma dal fatto che il neutrone assorbito altera la stabilità del nucleo stesso, che si scinde spontaneamente in nuclei più stabili.
+
+Questi due fenomeni sono i punti chiave della scoperta di Fermi, che si orientò di conseguenza verso la ricerca di un meccanismo per rallentare i neutroni emessi dalla fissione di un nucleo di uranio 235, con un'energia iniziale di 4.8 MeV, in modo da rendere i neutroni emessi utilizzabili per una reazione a catena.
 
 
+\subsection{Meccanismi di controllo della reazione}
+
+Quando si stabilisce una reazione a catena, la velocità delle reazioni è elevata e l'energia liberata è importante, quindi in mancanza di un sistema di controllo, la reazione è esplosiva. Per ottenere una reazione controllata occorre avere a disposizione un meccanismo per moderare la reazione.
+
+Dato che la reazione dipende dal fatto che almeno un neutrone emesso in una fissione sia disponibile per scatenarne un'altra, la reazione può essere modulata impiegando un materiale che assorbe neutroni, assemblato in barre di controllo, che possono essere inserite all'interno dei blocchi di combustibile per modulare la reazione.
+Cadmio e boro sono forti assorbitori di neutroni e sono i materiali più comuni impiegati per la realizzazione di barre di controllo. Una tipica reazione di assorbimento nel Boro è 
+
+\[
+\nucl{10}{5}{B} + \nucl{1}{0}{n} \to \nucl{7}{3}{Li} + \nucl{4}{2}{He} + 2.8 \text{MeV}
+\]
 
 
+Nella conduzione di un reattore nucleare, si mettono in posizione le barre di combustibile, quindi si sollevano lentamente le barre di controllo fino al momento in cui la reazione a catena diventa stabile. Al procedere della reazione, il numero di nuclei di uranio 235 diminuisce e si accumulano i prodotti di fissione che assorbono neutroni, le barre di controllo possono quindi essere estratte maggiormente.
+A un certo punto la reazione a catena non può più essere mantenuta e il combustibile deve essere sostituito.
 
+\figura{barre_di_controllo}{Barre di controllo dell'ABWR}
+
+Nella figura \ref{fig:barre_di_controllo} sono illustrate le barre di controllo del progetto \ac{ABWR} di Toshiba. 
+Le barre di controllo hanno una sezione a croce e sono inserite verso l'alto dalla base del reattore, all'interno dello spazio occupato dalle barre di combustibile.
+
+\subsection{Fattore di moltiplicazione $k_{\infty}$}
+
+Non tutti i neutroni prodotti in una fissione avranno l'opportunità di causare nuove fissioni perché saranno assorbiti da materiale non fissile. Alcuni saranno assobiti parassiticamente in materiale fissile senza causare fissioni, altri sfuggiranno dal reattore. Tuttavia, non è necessario che ogni neutrone prodotto in una fissione dia luogo ad un'altra fissione perché si mantenga stabile la reazione. La condizione minima per una reazione stabile è che in media ogni reazione di fissione produca almeno un neutrone in grado di causare un'altra fissione.
+Questa condizione può essere espressa nei termini di un coefficiente di moltiplicazione.
+
+Il numero di neutroni assorbiti o sfuggiti da un reattore determinerà il valore di questo coefficiente di moltiplicazione e determinerà anche se la generazione successiva di neutroni prodotti in una reazione è maggiore, minore o uguale alla generazione precedente. Ogni reattore di dimensione finita avrà perdite di neutroni. Generalmente, al crescere delle dimensioni del reattore diminuisce la quota di neutroni che sfugge dal reattore stesso.
+Per semplicità, consideriamo un reattore di dimensione infinita, dal quale, quindi, non sfuggono neutroni. Una misura dell'incremento o decremento del flusso di neutroni in un reattore di dimensione infinita è il \emph{coefficiente di moltiplicazione infinita} $k_{\infty}$. Il coefficiente di moltiplicazione infinita è il rapporto fra i neutroni prodotti dalla fissione in una generazione rispetto al numero di neutroni perduti per assorbimento nella generazione precedente. Questo si può esprimere nel modo seguente:
+
+\[
+k_{\infty} = \frac{\text{neutroni prodotti dalla fissione in una generazione}}{\text{neutroni assorbiti nella precedente generazione}}
+\]
+
+\subsection{Formula a quattro fattori}
+
+Un gruppo di neutroni veloci prodotti dalla fissione può partecipare a diverse reazioni. Alcune di queste riducono le dimensioni del gruppo, mentre altre permettono al gruppo di umentare o produrre una seconda generazione. Ci sono quattro fattori che sono indipendenti dalla forma e dalle dimensioni del reattore che danno la capacità di moltiplicazione interente del materiale combustibile e del moderatore, senza riguardo per le perdite. Questa formula a quattro fattori rappresente il coefficiente di moltiplicazione infinita, come mostrato nella seguente equazione
+
+\[
+k_{\infty} = \epsilon p f \eta
+\]
+
+in cui
+
+\[
+\begin{aligned}
+\epsilon &= \text{fattore di fissione veloce} \\
+p &= \text{probabilità di fuga dalla risonanza} \\
+f &= \text{fattore di utilizzazione termica} \\
+\eta &= \text{fattore di riproduzione} \\
+\end{aligned}
+\]
+
+Ognuno di questi fattori, che spiegheremo nel seguito, rappresenta un processo che aggiunge o sottrae neutroni al gruppo prodotto in una generazione dalla fissione.
+
+
+\subsubsection{Fattore di fissione veloce $\epsilon$}
+
+Il primo processo in cui i neutroni di una generazione sono coinvolti è la fissione veloce. La fissione veloce è un processo di fissione causato da neutroni ad alta energia. La fissione veloce produce un aumento nella popolazione di neutroni veloci nel nucleo del reattore. La sezione d'uto per i neutroni veloci nell'uranio 235 e uranio 238 è piccola, quindi solo un numero ridotto di neutroni veloci causa una fissione. Il \emph{fattore di fissione veloce} $\epsilon$ è definito come il rapporto fra il numero di neutroni veloci prodotti da tutte le fissioni e il numero di neutroni veloci prodoti da fissioni termiche.
+L'espressione di questo rapporto è
+
+\[
+\epsilon = \frac{\text{numero di neutroni veloci prodotti da tutte le fissioni}}{\text{numero di neutroni veloci prodotti da fissioni termiche}}
+\]
+
+Un neutrone veloce può essere assorbito da un nucleo del combustibile solo se gli passa abbastanza vicino. il valore di $\epsilon$ sarà influenzato dalla disposizione e dalla concentrazione del combustibile e del moderatore. Il valore di $\epsilon$ è essenzialmente $1.00$ per un reattore omogeneo in cui gli atomi del combustibile sono circondati da atomi di moderatore. In un reattore eterogeneo, invece, gli atomi di combustibile sono impacchettati insieme in elementi come aghi, barre o pellet. I neutroni emessi dalla fissione di un atomo di combustibile hanno quindi un'ottima probabilità di passare vicino a un altro atomo di combustibile prima di rallentare significativamente.
+La disposizione di elementi del nucleo del reattore risulta in un valore di $\epsilon$ di circa $1.03$ per i reattori più eterogenei.
+Il valore di $\epsilon$ non è significativamente influenzato da variabili come la temperatura, la pressione, l'arricchimento o la concentrazione di veleni neutronici. I veleni sono materiali che assorbono con facilità neutroni, su cui torneremo in seguito.
+
+
+\subsubsection{Probabilità di fuga dalla risonanza}
+
+Dopo un aumento di numero dovuto alle fissioni veloci, i neutroni continuano a diffondere attraverso il reattore. Muovendosi nel reattore, i neutroni collidono con nuclei di atomi del combustibile e atomi non appartenenti al combustibile, per esempio appartenenti al moderatore, perdendo energia e rallentando.
+Durante il rallentamento, mentre attraversano la regione di risonanza dell'uranio 238, che si estende da 6 eV a 200 eV, c'è una possibilità che alcuni neutroni siano catturati. 
+
+\figura{neutron-capture}{Andamento della sezione d'urto e risonanza epitermica}
+
+La probabilità che un neutrone non sia catturato dal picco di risonanza è chiamata probabilità di fuga dalla risonanza. La \emph{probabilità di fuga dalla risonanza $(p)$} è definita come il rapporto fra il numero di neutroni che raggiungono energia termica rispetto al numero di neutroni che iniziano il rallentamento. Questo rapporto è mostrato nel seguito
+
+\[
+p = \frac{\text{numero di neutroni che raggiungono energia termica}}{\text{numero di neutroni che iniziano a rallentare}}
+\] 
+
+Il valore della probabilità di fuga dalla risonanza è determinato in larga misura dalla disposizione del combustibile e del moderatore, e dall'arricchimento dell'uranio 235 (se si usa questo combustibile).
+Per subire un assorbimento nella regione di risonanza, un neutrone deve passare abbastanza vicino a un nucleo di uranio 238 durante il processo di rallentamento. In un reattore omogeneo il neutrone rallenta nella regione dei nuclei di combustibile e questa condizione si presenta facilmente. Questo significa che un neutrone ha un'alta probabilità di essere assorbito da uranio 238 mentre rallenta, quindi la sua probabilità di fuga è inferiore. In un reattore eterogeneo, invece, il neutrone rallenta nella regione del moderatore, dove non ci sono nuclei di uranio 238, quindi ha una bassa probabilità di subire un'assorbimento nella regione di risonanza e le sue probabilità di fuga sono più alte.
+
+Il valore della probabilità di fuga dalla risonanza non è condizionato significativamente dalla pressione o dalla concentrazione di veleni. Nei reattori moderati ad acqua con basso arricchimento di uranio 235, aumentare la temperatura del combustibile aumenterà l'assorbimento da parte dell'uranio 238 a causa dell'effetto doppler (un allargamento dei picchi di risonanza, normalmente stretti, causato dal movimento termico dei nuclei). L'aumento dell'assorbimento dovuto alla risonanza, diminuisce la probabilità di fuga dalla risonanza e il coefficiente di temperatura del combustibile per la fuga dalla risonanza (su cui torneremo in seguito) è negativo. Il coefficiente di temperatura per la fuga dalla risonanza per il moderatore è anche negativo. All'aumentare della temperatura la densità dell'acqua diminuisce. La diminuzione di densità dell'acqua permette a un numero maggiore di neutroni con energia nella zona di risonanza di entrare nel combustibile e essere assorbiti. Il valore della probabilità di fuga dalla risonanza è sempre poco meno di uno (normalmente da 0,95 a 0,99).
+
+Il prodotto del fattore di fissione allo stato veloce e della probabilià di fuga dalla risonanza $( \epsilon p )$ è il rapporto fra il numero di neutroni veloci che sopravvivono al processo di rallentamento (termalizazione) rispetto al numero di neutroni veloci presenti all'inizio della generazione.
+
+
+\subsubsection{Fattore di utilizzazione termica ($f$)}
+
+Una volta allo stato termico, un neutrone continua a diffondere attraverso il reattore, soggetto all'assobimento da parte di altri materiali nel reattore, oltre al combustibile. Il fattore di utilizzazione termica descrive quanto efficacemente i neutroni termici sono assorbiti dal combustibile, o quanto sono utilizzati all'interno del reattore.
+Il \emph{fattore di utilizzazione termica} ($f$) è definito come il rapporto fra il numero di neutroni termici assorbiti nel combustibile e il numero di reattori termici assorbiti in qualunque materiale all'interno del reattore. Il rapporto è quindi
+
+\[
+f = \frac{\text{numero di neutroni termici assorbiti nel materiale}}{\text{numero di reattori termici assorbiti in qualunque materiale presente nel reattore}}
+\] 
+
+Il fattore di utilizzazione termica sarà sempre minore di uno perché alcuni dei neutroni termici saranno comunque assorbiti da atomi di elementi diversi dal combustibile.
+
+Si può sviluppare un'equazione per descrivere il fattore di utilizzazione termica in termini della velocità di reazione come segue:
+
+\[
+f = \frac{\text{tasso di assorbimento dei neutroni termici nel combustibile}}{\text{tasso di assorbimento dei neutroni termici in qualunque materiale}}
+\]
+\[
+f = \frac{\Sigma_{a}^{U}\phi^{U}V^{U}}{\Sigma_{a}^{U}\phi^{U}V^{U} + \Sigma_{a}^{m}\phi^{m}V^{m} + \Sigma_{a}^{p}\phi^{p}V^{p}}
+\]
+
+Gli indici $U$, $m$ e $p$ si riferiscono rispettivamente a uranio, moderatore e veleno. In un reattore eterogeneo, il flusso sarà differente nelle regioni del combustibile rispetto alle regioni del moderatore a causa del tasso di assorbimento più alto nel combustibile. Inoltre, i volumi di combustibile, moderatore e veleni saranno differenti. Anche se non sono esposte nell'equazione precedente, altri materiali diversi dal combustibile, come i materiali di costruzione del reattore, possono assorbire neutroni in un reattore omogeneo. Questi altri materiali sono spesso designati insieme con l'indice OS (other stuff). Per essere completamente accurata, l'equazione precedente per il fattore di utilizzazione termica dovrebbe includere tutti i materiali che assorbono neutroni, quando si intende modellare reattori eterogenei. Comunque, l'equazione precedente è soddisfacente.
+
+In un reattore omogeneo il flusso di neutroni visto dal combustibile, moderatore e veleni sarà lo stesso. Inoltre, dato che si suppone che siano diffusi per tutto il reattore, essi occupano l'intero volume. Questo permette di riscrivere l'equazione precedente come di seguito
+
+\[
+f = \frac{\Sigma_{a}^{U}}{\Sigma_{a}^{U} + \Sigma_{a}^{m} + \Sigma_{a}^{p}}
+\]
+
+Questa equazione dà un'approssimazione di un reattore eterogeneo se combustibile e moderatore sono composti di elementi di piccole dimensioni distribuiti uniformemente per il reattore.
+
+Dato che la sezione d'urto di assorbimento varia con la temperatura, sembrerebbe che il fattore di utilizzazione termica dovrebbe variare con essa. Sostituendo le formule di correzione per la temperatura nell'equazione precedente, tutti i termini cambiano nello stesso modo e il rapporto resta invariato. In un reattore eteogeneo moderato con acqua c'è un altro fattore importante. Quando la temperatura sale, il moderatore si espande e una quantità significativa di esso sarà forzata fuori dal nucleo del reattore. Questo significa che $N^{m}$, il numero di atomi del moderatore per $cm^{3}$  si ridurrà rendendo meno probabile l'assorbimento di un neutrone da parte di un nucleo del moderatore. La riduzione in $N^{m}$ risulta in un aumento dell'utilizzazione termica al crescere della temperatura del moderatore, dato che i neutroni hanno probabilità migliori di urtare un atomo di combustibile. A causa di questo effetto, il coefficiente di temperatura per il fattore di utilizzazione termica è positivo.
+La quantità di arrichimento di uranio 235 e la concentrazione di veleni influenzerà il fattore di utilizzazione termica in modo simile a quello dell'equazione precedente.
+
+\subsubsection{Fattore di riproduzione}
+
+La maggior parte dei neutroni assorbiti nel combustibile causano fissione, ma non tutti. Il fattore di riproduzione $\eta$ è definito come il rapporto fra il numero di neutroni veloci prodotti dalla fissione termica rispetto al numero di neutroni assorbiti dal combustibile. Il fattore di riproduzione è
+
+\[
+\eta = \frac{\text{numero di neutroni veloci prodotti dalla fissione termica}}{\text{numero di neutroni termici assorbiti dal combustibile}}
+\]
+
+Il fattore di riproduzione può anche essere definito come un rapporto fra tassi, come mostrato sotto.
+
+\[
+\eta = \frac{\text{tasso di produzione di neutroni veloci nella fissione termica}}{\text{tasso di assorbimento di neutroni termici nel combustibile}}
+\]
+
+Il tasso di produzione di neutroni veloci da parte della fissione termica può essere determinato dal prodotto del tasso di reazione di fissione ($\Sigma_{f}^{U}\phi^{U}$) e il numero medio di neutroni prodotti per fissione ($\nu$). Il tasso di assorbimento di neutroni termici nel combustibile è $\Sigma_{a}^{U}\phi^{U}$. Sostituendo questi termini nell'equazione precedente si ottiene
+
+\[
+\eta = \frac{\Sigma^{U}_{f} \phi^{U} \nu}{\Sigma^{U}_{a} \phi^{U}}
+\]
+
+La tabella seguente mostra i valori di $\nu$ e $\eta$ per diversi materiali, per neutroni termici e veloci.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{@{} ccc @{}}
+    \toprule
+	nucleo fissile & neutroni termici & neutroni veloci\\
+	& $\nu$ \quad $\eta$ & $\nu$ \quad $\eta$ \\
+    \midrule
+    Uranio 233 & 2.49 \quad 2.29 & 2.58 \quad 2.40 \\ 
+    Uranio 235 & 2.42 \quad 2.07 & 2.51 \quad 2.35 \\ 
+    Plutonio 239 & 2.93 \quad 2.15 & 3.04 \quad 2.90 \\ 
+    \bottomrule
+  \end{tabular}
+  \caption{Numero medio di neutroni liberati in una fissione}
+  \label{tab:neutroniPerFissione}
+\end{table}
+
+Nel caso in cui il combustibile contenga diversi materiali fissili, è necessario tenere conto di gni materiale. Nel caso del nucleo di un reattore contenente sia uranio 235, sia uranio 238, il fattore di riproduzione sarebbe calcolato come segue
+
+\[
+\eta = \frac{N^{U-235} \sigma^{U-235} \nu^{U-235}}{N^{U-235} \sigma^{U-235} + N^{U-238} \sigma^{U-238}}
+\]
+
+Al variare della temperatura ogni sezione d'urto microscopica varia in accordo con la legge $1/v$. Dato che numeratore e denominatore cambiano in egual misura, il valore netto del cambiamento in $\eta$ è zero. Quindi $\eta$ cambia solo al variare dell'arricchimento di uranio 235, aumentando con l'arricchimento perché c'è meno uranio 238 nel reattore rendendo più probabile che un neutrone assorbito nel combustibile sia assorbito da uranio 235 causando una fissione.
+
+Per determinare il fattore di riproduzione per un singolo nuclide, invece che per un miscuglio, si può ridurre l'equazione nella forma seguente
+
+\[
+\eta = \frac{\sigma_{f}\nu}{\sigma_{a}}
+\]
+
+
+\subsection{Fattore di moltiplicazione efficace}
+
+Il fattore di moltiplicazione infinito pu rappresentare solo un reattore di dimensioni infinite, perché si assume che nessun neutrone sfugga dal reattore. Per descrivere completamente il ciclo di vita dei neutroni in un reattore reale, di dimensione finita, si rende necessario tenere conto dei neutroni che sfuggono dal reattore. Il fattore di moltiplicazione che tiene in conto le perdite è il \emph{fattore di moltiplicazione efficace} definito come il rapporto fra i neutroni prodotti in una generazione dalla fissione e il numero di neutroni perduti per l'assorbimento e le perdite nella generazione precedente.
+
+Il fattore di moltiplicazione efficace, quindi può essere espresso come:
+
+\[
+k_{eff} = \frac{\text{neutroni prodotti dalla fissione in gen n}}{
+		\text{neutroni assorbiti in gen n-1} + 
+		\text{neutroni sfuggiti in gen n-1}
+	}
+\] 
+
+Quindi, il valore di $k_{eff}$ per una reazione di fissione autosostenuta, in cui la popolazione di neutroni non aumenta e non diminuisce, è uno. La condizione in cui la catena di reazioni che subiscono i neutroni è stabile e la popolazione non aumenta né diminuisce è conosciuta come \emph{condizione critica} e può essere espressa semplicemente con $k_{eff} = 1$.
+
+Se la produzione di neutroni è maggiore dell'assorbimento e della fuga, il reattore è chiamato supercritico. un un reattore è \emph{supercritico}, $k_{eff}$ è maggiore di uno e il flusso di neutroni aumenta a ogni generazione. Se, viceversa, la produzione di neutroni è inferiore all'assorbimento e alla fuga, il reattore è chiamato subcritico. In un reattore \emph{subcritico}, $k_{eff}$ è minore di uno e il flusso di neutroni diminuisce a ogni generazione.
+
+Quando il fattore di moltiplicazione di in reattore non è esattamente uno, il flusso di neutroni cambierà e causerà un cambiamento nella potenza prodotta. Quindi, è essenziale conoscere il modo in cui questo fattore dipende dal contenuto e dalla costruzione del reattore. 
+Il bilancio fra la produzione di neutroni e il loro assorbimento nel nucleo e la fuga dal nucleo determina il valore del fattore di moltiplicazione. Se le perdite sono abbastanza ridotte da poter essere trascurate, il fattore di moltiplicazione dipende dal bilancio fra produzione e assorbimento  ed è chiamato coefficiente di moltiplicazione infinita, dato che un reattore infinito non ha perdite. Quando si tengono in conto le perdite, il fattore di moltiplicazione considerato è il fattore di moltiplicazione efficace ($k_{eff}$).
+
+Il fattore di moltiplicazione efficace per un reattore finito può essere espresso in termini del fattore di moltiplicazione infinito e di due fattori aggiuntivi che tengono conto della fuga di neutroni dal nucleo, come segue
+
+\[
+k_{eff} = k_{}{\infty} \mathcal{L}_{f} \mathcal{L}_{t}
+\] 
+
+\subsubsection{Probabilità di non fuga veloce}
+
+In un reattore reali di dimensione finita, alcuni dei neutroni sfuggono dai confini del ucleo del reattore prima di iniziare il processo di rallentamento. La probabilità di non fuga veloce ($\mathcal{L}_{f}$) è definita come il rapporto fra il numero di neutroni veloci che non sfuggono dal nucleo del reattore rispetto al numero totale di neutroni prodotti in tutte le fissioni. In altre parole
+
+\[
+\mathcal{L}_{f} = \frac{\text{numero di neutroni veloci che non sfuggono dal reattore}}{\text{numero di neutroni veloci prodotti in tutte le fissioni}}
+\]
+
+
+\subsubsection{Probabilità di non fuga termica $\mathcal{L}_{t}$}
+
+Anche i neutroni che hanno raggiunto un livello di energia termico posso sfuggire dal nucleo di un reattore. La \emph{probabilità di non fuga termica} è rappresentata da
+
+\[
+\mathcal{L}_{t} = \frac{\text{numero di neutroni termici che non sfuggono dal reattore}}{\text{numero di neutroni che raggiungono lo stato termico}}
+\]
+
+La probabilità di non fuga veloce ($\mathcal{L}_{f}$) e la probabilità di non fuga termica ($\mathcal{L}_{t}$) possono essere combinate in un termine che fa la frazione di tutti i neutroni che non sfuggono dal nucleo del reattore. Questo termine è chiamato probabilità totale di non fuga ed è denotato dal simbolo ($\mathcal{L}_{T}$) ove 
+$\mathcal{L}_{T} = \mathcal{L}_{f} \mathcal{L}_{t}$. Sia $\mathcal{L}_{f}$, sia $\mathcal{L}_{t}$ sono influenzate dal coefficiente di temperatura (definito nel seguito) che è negativo per le probabilià di non fuga, perché al salire della temperatura $\mathcal{L}_{f}$ e $\mathcal{L}_{t}$ diminuiscono.
+
+
+\subsection{Formula a sei fattori}
+
+Con l'inclusione degli ultimi due fattori è possibile determinare la frazione di neutroni che rimangono dopo ogni possibile processo in un reattore nucleare. Il coefficiente di moltiplicazione efficace ($k_{eff}$) può esser determinato come il prodotto di sei fattori
+
+\[
+l_{eff} = \epsilon \mathcal{L}_{f} p \mathcal{L}_{t} f \eta
+\]
+
+Questa equazione è chiamata \emph{formula a sei fattori}. usando la formula a sei fattori si può tracciare l'intero ciclo di vita dei neutroni dalla produzione per fissione all'inizio di successive fissioni. La figura seguente mostra il ciclo di vita di una generazione di 1000 neutroni attraverso i diversi fattori che compongono il coefficiente di moltiplicazione.
+
+% Diagramma del calcolo dei neutroni
+
+\figura{ciclo-di-vita-neutroni}{Il ciclo di vita di una generazione di neutroni}
 

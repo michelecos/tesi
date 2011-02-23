@@ -8,7 +8,7 @@
 %    * See classicthesis-ldpkg.sty for useful commands
 % **************************************************************************************************************
 \documentclass[ twoside,openright,titlepage,fleqn,numbers=noenddot,headinclude,%1headlines,% 
-                11pt,a4paper,BCOR5mm,footinclude,cleardoublepage=empty,abstractoff % <--- obsolete, remove (todo)
+                11pt,a4paper,BCOR5mm,footinclude,clearpage=empty,abstractoff % <--- obsolete, remove (todo)
                 ]{scrreprt}
 
 % ********************************************************************
@@ -20,7 +20,7 @@
 % ********************************************************************
 % Re-usable information
 % ********************************************************************
-\newcommand{\myTitle}{Combustibili nucleari per reattori di terza e quarta generazione\xspace}
+\newcommand{\myTitle}{Combustibili per reattori nucleari di terza generazione\xspace}
 \newcommand{\myDegree}{An Homage to The Elements of Typographic Style\xspace}
 \newcommand{\myName}{Michele Costabile\xspace}
 \newcommand{\myProf}{Andrea Borio Di Tigliole\xspace}
@@ -39,7 +39,7 @@
 \usepackage[ngerman,american, italian]{babel}           
 \usepackage[square,numbers]{natbib} 
 \usepackage[fleqn]{amsmath} % math environments and more by the AMS 
-
+\usepackage{longtable}
 %*******************************************************
 \usepackage{classicthesis-ldpkg} % [backref]
 %*******************************************************
@@ -123,9 +123,59 @@
 } 
 
 % ********************************************************************
+% Una macro per la scrittura di nuclidi
+%*******************************************************
+\newcommand{\nucl}[3]{
+	\ensuremath{
+		\phantom{\ensuremath{^{#1}_{#2}}}
+		\llap{\ensuremath{^{#1}}}
+		\llap{\ensuremath{_{\rule{0pt}{.75em}#2}}}
+		\mbox{#3}
+	}
+}
+
+% ********************************************************************
+% Una macro per le immagini
+%*******************************************************
+\newcommand{\figura}[2] {
+	\begin{figure}[ht]
+	\begin{center}
+	\leavevmode
+	\includegraphics[width=0.8\textwidth]{#1}
+	\end{center}
+	\caption{#2}
+	\label{fig:#1}
+	\end{figure}
+}
+
+\newcommand{\figuraw}[2] {
+	\begin{figure}[ht]
+	\begin{center}
+	\leavevmode
+	\includegraphics[width=\textwidth]{#1}
+	\end{center}
+	\caption{#2}
+	\label{fig:#1}
+	\end{figure}
+}
+
+\newcommand{\figurah}[2] {
+	\begin{figure}[ht]
+	\begin{center}
+	\leavevmode
+	\includegraphics[height=10cm]{#1}
+	\end{center}
+	\caption{#2}
+	\label{fig:#1}
+	\end{figure}
+}
+
+
+% ********************************************************************
 % Where to look for graphics
 %*******************************************************
-%\graphicspath{{gfx/}{misc/}} % considered harmful according to l2tabu
+\graphicspath{{Graphics/}}% considered harmful according to l2tabu
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 % ********************************************************************
 % Hyperreferences
 %*******************************************************
@@ -162,35 +212,36 @@
 %********************************************************************
 % Frontmatter
 %*******************************************************
-\include{FrontBackmatter/DirtyTitlepage}
+%\include{FrontBackmatter/DirtyTitlepage}
 %\include{FrontBackmatter/Titlepage}
 %\include{FrontBackmatter/Titleback}
-%\cleardoublepage\include{FrontBackmatter/Dedication}
-\cleardoublepage\include{FrontBackmatter/Abstract}
-%\cleardoublepage\include{FrontBackmatter/Publication}
-%\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+%\clearpage\include{FrontBackmatter/Dedication}
+%\clearpage\include{FrontBackmatter/Abstract}
+%\clearpage\include{FrontBackmatter/Publication}
+%\clearpage\include{FrontBackmatter/Acknowledgments}
 \pagestyle{scrheadings}
-\cleardoublepage\include{FrontBackmatter/Contents}
+\clearpage\include{FrontBackmatter/Contents}
 %********************************************************************
 % Mainmatter
 %*******************************************************
 \pagenumbering{arabic}
-% use \cleardoublepage here to avoid problems with pdfbookmark
-\include{Chapters/Chapter01}
+% use \clearpage here to avoid problems with pdfbookmark
+%\include{Chapters/Chapter00}
+%\include{Chapters/Chapter01}
 \include{Chapters/Chapter02}
-\include{Chapters/Chapter03}
+%\include{Chapters/Chapter03}
 % ********************************************************************
 % Backmatter
 %*******************************************************
 %\appendix
-%\cleardoublepage\part{Appendice}
+%\clearpage\part{Appendice}
 %\include{Chapters/Chapter0A}
 %********************************************************************
 % Other Stuff in the Back
 %*******************************************************
-\cleardoublepage\include{FrontBackmatter/Bibliography}
-\cleardoublepage\include{FrontBackmatter/Colophon}
-%\cleardoublepage\include{FrontBackmatter/Declaration}
+\clearpage\include{FrontBackmatter/Bibliography}
+%\clearpage\include{FrontBackmatter/Colophon}
+%\clearpage\include{FrontBackmatter/Declaration}
 % ********************************************************************
 %*******************************************************
 \end{document}

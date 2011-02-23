@@ -1,32 +1,81 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[:bh()]{:bh}
-Magnox - wikipedia.
+\bibitem[:ep({\natexlab{a}})]{:eprfrance}
+New french nuclear to include oil and gas interest, {\natexlab{a}}.
 
-\bibitem[:cr()]{:cr}
-Dresden nuclear power plant - wikipedia.
+\bibitem[:ep({\natexlab{b}})]{:eprindia}
+India: Agreements between areva and npcil for the supply of two epr reactors
+  and fuel for 25 years - areva, {\natexlab{b}}.
 
-\bibitem[:dq()]{:dq}
-Enrico fermi nuclear generating station - wikipedia.
+\bibitem[:ep({\natexlab{c}})]{:epritaly}
+Epr{\texttrademark} projects in italy: Areva is pleased with its customers'
+  confidence, {\natexlab{c}}.
 
-\bibitem[:hc()]{:hc}
-Sellafield - wikipedia.
+\bibitem[:fj()]{:fj}
+Wna reactor database.
 
-\bibitem[:kl()]{:kl}
-Doe - office of nuclear energy.
+\bibitem[:fk()]{:fk}
+http://www.ans.org/pubs/magazines/nn/docs/2006-1-3.pdf.
 
-\bibitem[:qf()]{:qf}
-Shippingport atomic power station - wikipedia.
+\bibitem[:ge()]{:gen3}
+Advanced nuclear power reactors | generation iii+ nuclear reactors.
 
-\bibitem[Bringhurst(2002)]{bringhurst:2002}
-Robert Bringhurst.
-\newblock \emph{The Elements of Typographic Style}.
-\newblock Version 2.5. Hartley \& Marks, Publishers, Point Roberts, WA, USA,
-  2002.
+\bibitem[:m5()]{:m5}
+M5 trademark details.
+
+\bibitem[:ap(2006)]{:ap100cert}
+Nrc: Issued design certification - ap1000, rev. 15, 01 2006.
+\newblock URL
+  \url{http://www.nrc.gov/reactors/new-reactors/design-cert/ap1000.html}.
+
+\bibitem[:ap(2008{\natexlab{a}})]{:ap1000-georgia}
+Westinghouse wins first us nuclear deal in 30 years | environment | the
+  guardian, 10 2008{\natexlab{a}}.
+\newblock URL
+  \url{http://www.guardian.co.uk/world/2008/apr/10/nuclear.nuclearpower}.
+
+\bibitem[:ap(2008{\natexlab{b}})]{:ap1000orders}
+Toshiba expects 33 reactor orders by 2015, may 2008{\natexlab{b}}.
+\newblock URL
+  \url{http://www.world-nuclear-news.org/C-Toshiba_expects_33_reactor_orders_b%
+y_2015-2205083.html}.
+
+\bibitem[:ap(2010{\natexlab{a}})]{:ap1000constr}
+Westinghouse ap1000, 02 2010{\natexlab{a}}.
+\newblock URL \url{http://AP1000.westinghousenuclear.com/ap1000_ec_mc.html}.
+
+\bibitem[:ap(2010{\natexlab{b}})]{:ap1000glance}
+Westinghouse ap1000, 02 2010{\natexlab{b}}.
+\newblock URL \url{http://AP1000.westinghousenuclear.com/ap1000_glance.html}.
+
+\bibitem[:ap(2010{\natexlab{c}})]{:ap100brochure}
+Ap1000 brochure, 02 2010{\natexlab{c}}.
+\newblock URL
+  \url{http://www.westinghousenuclear.com/docs/AP1000_brochure.pdf}.
+
+\bibitem[:ap(2010{\natexlab{d}})]{:ap100safety}
+Westinghouse ap1000, 02 2010{\natexlab{d}}.
+\newblock URL \url{http://AP1000.westinghousenuclear.com/ap1000_safety.html}.
+
+\bibitem[:nr(2010)]{:nrc-applications}
+Nrc: Combined license applications for new reactors, 09 2010.
+\newblock URL \url{http://www.nrc.gov/reactors/new-reactors/col.html}.
+
+\bibitem[:ch(2011)]{:china-nuclear-plans}
+China nuclear power | chinese nuclear energy, 02 2011.
+\newblock URL \url{http://www.world-nuclear.org/info/inf63.html}.
+
+\bibitem[Arnold et~al.(1997)Arnold, Yadigaroglu, Stoop, Gonzales, Sawyer, and
+  Rao]{arnold1997esbwr}
+H.~Arnold, G.~Yadigaroglu, PM~Stoop, A.~Gonzales, CD~Sawyer, and A.~Rao.
+\newblock Esbwr-the latest passive bwr.
+\newblock \emph{Nuclear Engineering International}, 42\penalty0 (511):\penalty0
+  3, 1997.
+\newblock ISSN 0029-5507.
 
 \end{thebibliography}
