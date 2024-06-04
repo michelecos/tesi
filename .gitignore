@@ -4,3 +4,4 @@
 *.lot
 *.aux
 *.dvi
+.DS_Store
